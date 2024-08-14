@@ -28,7 +28,7 @@ const AllProducts = () => {
         setProducts(data.products);
       }
       else{
-        router.push('/signIn');
+        router.push('/signUp');
       }
   };
 
@@ -42,7 +42,6 @@ const AllProducts = () => {
       if(!boolean){
         router.push('/signIn');
       }
-      console.log("heheheheh");
       fetchProducts();
     }
   }

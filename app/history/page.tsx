@@ -11,7 +11,7 @@ import Header from '@/components/Header/header';
   const customerId=getCustomerId()||'';
   const router=useRouter();
   if(!customerId){
-    router.push('/signIn');
+    router.push('/signUp');
   }
   const handleOrders=async()=>{
     const allOrders=await getOrders(customerId);
@@ -24,7 +24,7 @@ import Header from '@/components/Header/header';
     <div className='py-12'>
       <Header />
       {orders &&orders.date.map((dates:string,index:number)=>(
-        <div className='flex flex-col gap-y-6 p-6'>
+        <div key={index} className='flex flex-col gap-y-6 p-6'>
           <span className='bg-blue-500 w-[100px] text-black p-2 text-center rounded rouned-3 opacity-70'>{dates}</span>
           <TableComponent codeResult={orders.orders[index].couponCode} data={orders.orders[index]} />
         </div>
