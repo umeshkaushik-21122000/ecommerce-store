@@ -8,6 +8,7 @@ import {
     TableHeader,
     TableRow,
   } from "@/components/ui/table"
+import { Code } from "lucide-react";
   
   export function TableComponent({codeResult,data}:any) {
     console.log("this is data inside table",data);
@@ -34,7 +35,7 @@ import {
         <TableFooter>
           <TableRow>
             <TableCell colSpan={3}>Total</TableCell>
-            <TableCell className="text-right">{codeResult!=''&& codeResult!=null && <span className="bg-red-500 p-3 rounded">10% off Applied</span>} $ {data.total}</TableCell>
+            <TableCell className="text-right">{codeResult!=''&& codeResult!=null && codeResult!='Promocode Not Applicable on This Order' && <span className="bg-red-500 p-3 rounded">10% off Applied</span>} $ {data.total}</TableCell>
           </TableRow>
         </TableFooter>
       </Table>
