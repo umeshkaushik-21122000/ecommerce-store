@@ -10,7 +10,7 @@ export const getCustomerId = () => {
 
 export const getAllProducts = async () => {
     try{
-        const response=await fetch('http://localhost:3003/products');
+        const response=await fetch('https://backend-kpme.onrender.com/products');
         const data= await response.json();
             console.log(response.status);
         return data;
@@ -23,7 +23,7 @@ export const getAllProducts = async () => {
 
 export const signUp = async (email:any,password:any) => {
     try{
-        const response=await fetch('http://localhost:3003/signUp',{
+        const response=await fetch('https://backend-kpme.onrender.com/signUp',{
             method:'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -44,7 +44,7 @@ export const signUp = async (email:any,password:any) => {
 
 export const signIn = async (email:any,password:any) => {
     try{
-        const response=await fetch('http://localhost:3003/signIn',{
+        const response=await fetch('https://backend-kpme.onrender.com/signIn',{
             method:'POST',
             headers: {
                 'Content-Type': 'application/json', // Set the content type header
@@ -66,7 +66,7 @@ export const signIn = async (email:any,password:any) => {
 export const addToCart = async ( item:any, customerId : any) => {
     try {
         console.log(item);
-        const response = await fetch('http://localhost:3003/addToCart', {
+        const response = await fetch('https://backend-kpme.onrender.com/addToCart', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -84,7 +84,7 @@ export const addToCart = async ( item:any, customerId : any) => {
 
 export const requestPromocode = async (customerId: string) => {
     try {
-        const response = await fetch('http://localhost:3003/promocode', {
+        const response = await fetch('https://backend-kpme.onrender.com/promocode', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -103,7 +103,7 @@ export const requestPromocode = async (customerId: string) => {
 
 export const applyPromocode = async ( promocode:string, customerId:string) => {
     try {
-        const response = await fetch('http://localhost:3003/applypromocode', {
+        const response = await fetch('https://backend-kpme.onrender.com/applypromocode', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -122,7 +122,7 @@ export const applyPromocode = async ( promocode:string, customerId:string) => {
 
 export const confirmOrder = async (customerId: string) => {
     try {
-        const response = await fetch('http://localhost:3003/confirmOrder', {
+        const response = await fetch('https://backend-kpme.onrender.com/confirmOrder', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -139,7 +139,7 @@ export const confirmOrder = async (customerId: string) => {
 
 export const getCart = async (customerId: string) => {
     try {
-        const response = await fetch('http://localhost:3003/cart', {
+        const response = await fetch('https://backend-kpme.onrender.com/cart', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -156,7 +156,7 @@ export const getCart = async (customerId: string) => {
 
 export const getOrders = async (customerId: string) => {
     try {
-        const response = await fetch('http://localhost:3003/orders', {
+        const response = await fetch('https://backend-kpme.onrender.com/orders', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -174,7 +174,7 @@ export const getOrders = async (customerId: string) => {
 
 export const checkCustomer = async (customerId: string) => {
     try {
-        const response = await fetch('http://localhost:3003/isCustomer', {
+        const response = await fetch('https://backend-kpme.onrender.com/isCustomer', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
